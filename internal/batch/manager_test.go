@@ -19,9 +19,8 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/oxia-db/oxia-client-golang/pkg/batch"
 	"github.com/stretchr/testify/assert"
-
-	"github.com/oxia-db/oxia/oxia/batch"
 )
 
 var errClose = errors.New("closed")

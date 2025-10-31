@@ -14,12 +14,7 @@
 
 package batch
 
-import (
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-
-	"github.com/oxia-db/oxia/common/constant"
-)
+import ()
 
 func isRetriable(err error) bool {
 	code := status.Code(err)

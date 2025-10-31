@@ -18,9 +18,8 @@ import (
 	"context"
 	"sync"
 
+	"github.com/oxia-db/oxia-client-golang/pkg/batch"
 	"go.uber.org/multierr"
-
-	"github.com/oxia-db/oxia/oxia/batch"
 )
 
 func NewManager(ctx context.Context, batcherFactory func(context.Context, *int64) batch.Batcher) *Manager {

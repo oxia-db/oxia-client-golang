@@ -21,13 +21,11 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/oxia-db/oxia-client-golang/internal/metrics"
+	"github.com/oxia-db/oxia-client-golang/internal/model"
+	"github.com/oxia-db/oxia-client-golang/proto"
 	"github.com/stretchr/testify/assert"
-	"go.opentelemetry.io/otel/metric/noop"
 	"google.golang.org/grpc/metadata"
-
-	"github.com/oxia-db/oxia/oxia/internal/metrics"
-	"github.com/oxia-db/oxia/oxia/internal/model"
-	"github.com/oxia-db/oxia/proto"
 )
 
 func TestReadBatchAdd(t *testing.T) {

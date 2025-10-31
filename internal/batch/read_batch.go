@@ -22,13 +22,11 @@ import (
 	"time"
 
 	"github.com/cenkalti/backoff/v4"
-
-	time2 "github.com/oxia-db/oxia/common/time"
-	"github.com/oxia-db/oxia/oxia/batch"
-
-	"github.com/oxia-db/oxia/oxia/internal/metrics"
-	"github.com/oxia-db/oxia/oxia/internal/model"
-	"github.com/oxia-db/oxia/proto"
+	"github.com/oxia-db/oxia-client-golang/internal/metrics"
+	"github.com/oxia-db/oxia-client-golang/internal/model"
+	"github.com/oxia-db/oxia-client-golang/internal/utils"
+	"github.com/oxia-db/oxia-client-golang/pkg/batch"
+	"github.com/oxia-db/oxia-client-golang/proto"
 )
 
 type readBatchFactory struct {
@@ -95,7 +93,7 @@ func (b *readBatch) doRequestWithRetries(request *proto.ReadRequest) (response *
 	ctx, cancel := context.WithTimeout(context.Background(), b.requestTimeout)
 	defer cancel()
 
-	backOff := time2.NewBackOff(ctx)
+	backOff := utils.NewBackOff(ctx)
 
 	err = backoff.RetryNotify(func() error {
 		response, err = b.doRequest(ctx, request)

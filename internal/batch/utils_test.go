@@ -14,9 +14,7 @@
 
 package batch
 
-import (
-	"github.com/oxia-db/oxia/oxia/batch"
-)
+import ()
 
 var (
 	shardId = int64(1)
