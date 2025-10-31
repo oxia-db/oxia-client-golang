@@ -1,0 +1,11 @@
+.idea
+bin/oxia
+bin/oxia-maelstrom
+.DS_Store
+**/*.toolbox
+data
+vendor/
+zz_generated.deepcopy.go
+pkg/generated/
+bin/
+mise.toml
